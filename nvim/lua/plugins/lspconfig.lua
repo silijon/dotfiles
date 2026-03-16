@@ -17,7 +17,6 @@ return {
       -- Automatically install LSPs and related tools to stdpath for neovim
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -289,7 +288,7 @@ return {
             offsetEncoding = { "utf-16" }, -- make it play nice with copilot
           },
         },
-        cmake = {},
+        -- cmake = {}, -- fails on dumb python version constraint
         -- turtle_ls = {}, -- not available in mason-lspconfig registry
 
         -- java --
