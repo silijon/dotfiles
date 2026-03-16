@@ -65,6 +65,8 @@ return {
               "--glob",
               "!**/.git/*",
               "--glob",
+              "!**/.cache/*",
+              "--glob",
               "!**/node_modules/*",
               "--glob",
               "!**/.venv/*",

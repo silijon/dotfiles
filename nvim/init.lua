@@ -198,31 +198,6 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { -- mason
-      "mason-org/mason.nvim",
-      opts = {
-        log_level = vim.log.levels.INFO
-      }
-    },
-    { -- mason auto installer
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-      dependencies = { "mason-org/mason.nvim" },
-      -- don’t force it to run on servers unless you want it
-      enabled = true,
-      config = function()
-        local tools = require("config.mason_ensure")
-        tools.add({ -- add any globally required tools here
-          "tree-sitter-cli", -- for nvim-treesitter rewrite
-        })
-
-        require("mason-tool-installer").setup({
-          ensure_installed = tools.list(),
-          auto_update = false,
-          run_on_start = true,
-        })
-      end,
-    },
-
     { -- colorscheme
       "EdenEast/nightfox.nvim",
       lazy = false,
@@ -478,21 +453,22 @@ require("lazy").setup({
     },
 
     -- Makes debugging nvim configs easier by running lua in a full screen
-    "rafcamlet/nvim-luapad",
+    -- "rafcamlet/nvim-luapad",
 
     -- Minimal Setup
     { import = "plugins/telescope" },
     { import = "plugins/harpoon" },
     { import = "plugins/noice" },
-    { import = "plugins/term" },
-    { import = "plugins/git" },
 
     -- Full Setup
-    { import = "plugins/todo", cond = vim.g.full_ide_setup },
+    { import = "plugins/mason", cond = vim.g.full_ide_setup },
     { import = "plugins/lspconfig", cond = vim.g.full_ide_setup },
+    { import = "plugins/todo", cond = vim.g.full_ide_setup },
     { import = "plugins/autocmp", cond = vim.g.full_ide_setup },
     { import = "plugins/format", cond = vim.g.full_ide_setup },
     { import = "plugins/lint", cond = vim.g.full_ide_setup },
+    { import = "plugins/term", cond = vim.g.full_ide_setup },
+    { import = "plugins/git", cond = vim.g.full_ide_setup },
     { import = "plugins/debugger", cond = vim.g.full_ide_setup },
     -- { import = "plugins/copilot", cond = vim.g.full_ide_setup },
 

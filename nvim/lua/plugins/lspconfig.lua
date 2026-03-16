@@ -289,7 +289,8 @@ return {
             offsetEncoding = { "utf-16" }, -- make it play nice with copilot
           },
         },
-        -- cmake = {},
+        cmake = {},
+        -- turtle_ls = {}, -- not available in mason-lspconfig registry
 
         -- java --
         jdtls = {},
@@ -329,6 +330,10 @@ return {
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
+      -- NOTE:
+      -- passing lspconfig package names to mason-tool-installer only because of a
+      -- behind-the-scenes magic integration between mason-tool-installer and mason-lspconfig
+      -- if we want to remove mason-lspconfig, we have to map lspconfig packages some other way
       require("config.mason_ensure").add(vim.tbl_keys(servers or {}))
 
       for name, server in pairs(servers) do
