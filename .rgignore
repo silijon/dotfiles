@@ -1,0 +1,6 @@
+# Whitelist gitignored files we still want visible in searches.
+# ~/.rgignore has higher precedence than .gitignore, so negation
+# patterns here override project-level gitignore rules.
+!.env
+!.env.*
+!.vscode/

@@ -73,6 +73,7 @@ done
 ln -sfT "$USER_HOME/dotfiles/.zshrc" "$USER_HOME/.zshrc"
 ln -sfT "$USER_HOME/dotfiles/.gitconfig" "$USER_HOME/.gitconfig"
 ln -sfT "$USER_HOME/dotfiles/.tmux.conf" "$USER_HOME/.tmux.conf"
+ln -sfT "$USER_HOME/dotfiles/.rgignore" "$USER_HOME/.rgignore"
 
 
 # --- Clone dotfiles ---
