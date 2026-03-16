@@ -74,6 +74,12 @@ return {
               "!**/.next/*",
               "--glob",
               "!**/.ruff_cache/*",
+              "--glob",
+              "!**/.tox/*",
+              "--glob",
+              "!**/.mypy_cache/*",
+              "--glob",
+              "!**/.pytest_cache/*",
             },
           },
           live_grep = {
@@ -89,6 +95,9 @@ return {
               "!**/__pycache__/*",
               "!**/.next/*",
               "!**/.ruff_cache/*",
+              "!**/.tox/*",
+              "!**/.mypy_cache/*",
+              "!**/.pytest_cache/*",
             },
           },
           buffers = {
