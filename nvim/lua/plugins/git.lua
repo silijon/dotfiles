@@ -32,7 +32,8 @@ return {
         end
       end
 
-      vim.keymap.set("n", "<leader>g", toggle_git, { desc = "[G]it Status Toggle" })
+      vim.keymap.set("n", "<leader>gs", toggle_git, { desc = "Git [S]tatus Toggle" })
+      vim.keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<CR>", { desc = "Git [D]iff Split" })
     end,
   },
 }

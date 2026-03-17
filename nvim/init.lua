@@ -297,6 +297,7 @@ require("lazy").setup({
           { "<leader>d", group = "[D]ebug" },
           { "<leader>s", group = "[S]earch" },
           { "<leader>h", group = "[H]arpoon" },
+          { "<leader>g", group = "[G]it" },
         },
       },
     },
