@@ -94,9 +94,16 @@ vim.opt.foldenable = false
 -- Set highlight on search
 vim.opt.hlsearch = true
 
--- Turn on spellcheck
+-- Spellcheck on for prose filetypes only
 vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+vim.opt.spell = false
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "gitcommit", "text" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
 
 -- Handle non-four-space tabstops per-file
 local ft_settings = {
