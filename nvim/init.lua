@@ -460,6 +460,24 @@ require("lazy").setup({
       end,
     },
 
+    { -- Math in the buffer
+      "necrom4/calcium.nvim",
+      cmd = { "Calcium" },
+      opts = {
+        scratchpad = {
+          border = "rounded",
+        },
+      },
+      keys = {
+        {
+          "<leader>c",
+          ":Calcium<CR>",
+          desc = "Calculate",
+          mode = { "n", "v" },
+        }
+      }
+    },
+
     -- Makes debugging nvim configs easier by running lua in a full screen
     -- "rafcamlet/nvim-luapad",
 
