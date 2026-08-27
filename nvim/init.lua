@@ -130,6 +130,10 @@ vim.keymap.set("n", "<leader>n", "<cmd>bnext<CR>", { desc = "Goto Next Buffer" }
 vim.keymap.set("n", "<leader>p", "<cmd>bprev<CR>", { desc = "Goto Previous Buffer" })
 vim.keymap.set("n", "<leader>b", "<C-^>", { desc = "Goto Previous Buffer" })
 
+vim.keymap.set("n", "<leader>m", function()
+  vim.cmd('!markflow "%"')
+end, { desc = "Run markflow on current buffer" })
+
 -- Clear search highlighting on <Esc> but still allow Esc for other things
 vim.keymap.set("n", "<Esc>", function()
   if vim.v.hlsearch == 1 then
