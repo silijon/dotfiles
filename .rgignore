@@ -5,5 +5,9 @@
 !.env
 !.env.*
 !.vscode/
+!.vscode/**
 !.claude/
+!.claude/**
+!.claude/plans/
+!.claude/plans/**
 !**/.claude/settings.local.json
