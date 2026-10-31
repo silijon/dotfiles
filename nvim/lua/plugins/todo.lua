@@ -25,7 +25,17 @@ return {
         todo.buf  = nil   -- buffer handle
         todo.win  = nil   -- window handle
 
-        local function open_float()
+        local function toggle_float()
+          -- already open: save if needed (which also syncs) and close ------
+          if todo.win and vim.api.nvim_win_is_valid(todo.win) then
+            if todo.buf and vim.api.nvim_buf_is_valid(todo.buf) and vim.bo[todo.buf].modified then
+              vim.api.nvim_buf_call(todo.buf, function() vim.cmd("silent write") end)
+            end
+            vim.api.nvim_win_close(todo.win, true)
+            todo.win = nil
+            return
+          end
+
           -- load / create buffer ------------------------------------------
           if todo.buf and vim.api.nvim_buf_is_valid(todo.buf) then
             -- buffer already exists
@@ -69,8 +79,8 @@ return {
         end
 
         -- Key-binding: t
-        vim.keymap.set("n", "<leader>t", open_float,
-          { desc = "Open todo.txt", silent = true, noremap = true })
+        vim.keymap.set("n", "<leader>t", toggle_float,
+          { desc = "Toggle todo.txt", silent = true, noremap = true })
 
         -- Shut off folding
         vim.api.nvim_create_autocmd("FileType", {
