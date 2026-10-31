@@ -60,6 +60,7 @@ nvim
 - **Terminal integration**: Built-in terminal with tmux navigation
 - **Color scheme**: Carbonfox (nightfox.nvim)
 - **Status line**: mini.statusline with git, diagnostics, and LSP info
+- **todo.txt sync**: `lua/config/todo_sync.lua` syncs `~/todo.txt` with Dropbox via curl on save (OAuth PKCE, `git merge-file` for conflicts). Commands: `:TodoSyncLogin`, `:TodoSyncPull`, `:TodoSyncPush`, `:TodoSyncStatus`
 
 ### Shell Environment
 - **Zsh plugins**: vi-mode, sudo, git, python, node, zoxide via Oh-My-Zsh

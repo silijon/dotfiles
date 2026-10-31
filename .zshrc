@@ -95,7 +95,7 @@ export EDITOR='nvim'
 
 alias open='xdg-open'
 alias vim='nvim'
-alias todo="nvim $HOME/Dropbox/Documents/todo.txt"
+alias todo="nvim $HOME/todo.txt"
 alias myip='curl http://icanhazip.com'
 alias l='ls -hal --color'
 alias ll='ls -hal --color |less'

@@ -19,7 +19,8 @@ return {
         })
 
         local todo = {}
-        local path = vim.fn.expand("~/Dropbox/Documents/todo.txt")
+        local path = vim.fn.expand("~/todo.txt")
+        require("config.todo_sync").setup({ path = path })
 
         todo.buf  = nil   -- buffer handle
         todo.win  = nil   -- window handle
